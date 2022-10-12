@@ -1,0 +1,16 @@
+#hero {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-image: url("../../assets/images/desktop/image-header.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  #hero {
+    max-width: 100%;
+    background-image: url("../../assets/images/mobile/image-header.jpg");
+  }
+}

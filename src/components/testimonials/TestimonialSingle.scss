@@ -1,0 +1,52 @@
+@use "../../scss/colors" as *;
+@use "../../scss/typograph" as *;
+@use "../../scss/structure" as *;
+
+.testimonial-col {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  .test-avatar {
+    border-radius: 50%;
+    max-width: 80px;
+    margin-bottom: $mb-3 * 2;
+  }
+
+  .test-text {
+    @include font__barlow;
+    color: $dark-gray;
+    margin-bottom: $mb-3 * 2;
+  }
+
+  .test-name {
+    @include font__fraunces-700;
+    color: $dark-blue;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .test-business {
+    @include font__barlow;
+    font-size: 1.4rem;
+    color: $light-gray;
+  }
+}
+
+
+@media(max-width: 768px) {
+  .testimonial-col {
+    margin-bottom: $mb-3;
+    .test-avatar {
+      margin-bottom: $mb-3;
+    }
+  
+    .test-text {
+      margin-bottom: $mb-3;
+    }
+  }
+  
+}

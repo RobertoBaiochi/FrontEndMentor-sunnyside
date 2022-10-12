@@ -1,0 +1,87 @@
+@use "../../scss/colors" as *;
+@use "../../scss/typograph" as *;
+@use "../../scss/structure" as *;
+
+.products-col {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .products-img {
+    width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+  
+
+  .products-text {
+    position: absolute;
+    width: 80%;
+    bottom: 35%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .products-title {
+      @include font__fraunces-700;
+      font-size: 3rem;
+      margin-bottom: $mb-3;
+      text-align: center
+    }
+
+    .products-content {
+      @include font__barlow;
+      font: 1.8rem;
+      text-align: center;
+      width: 80%;
+    }
+  }
+}
+
+@media(max-width: 1150px) {
+  .products-col {
+    .products-text {
+      bottom: 45%;
+    }
+  }
+}
+
+@media(max-width: 900px) {
+  .products-col {
+  
+    .products-text {
+      bottom: 45%;
+  
+      .products-title {
+        margin-bottom: 1rem;
+      }
+  
+      .products-content {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .products-col {
+    .products-text {
+      bottom: 45%;
+
+      .products-title {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+      }
+  
+    }
+  }
+}
+

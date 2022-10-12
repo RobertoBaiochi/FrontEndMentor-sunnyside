@@ -1,0 +1,67 @@
+@use "../../scss/colors" as *;
+@use "../../scss/typograph" as *;
+@use "../../scss/structure" as *;
+
+.text-container {
+  width: 100%;
+  max-width: $width-1200;
+  padding: $padding-box;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .hero-title {
+    @include font__fraunces-900;
+    color: $white;
+    font-size: 7rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1rem;
+    margin: 0 auto 12rem;
+  }
+
+  .arrow-animation {
+    position: relative;
+    animation: updown 2s ease-in-out infinite;
+  }
+}
+
+// Arrow animation ----
+@keyframes updown {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: 15px;
+  }
+}
+
+@media (max-width: 575px) {
+  .text-container {
+    .hero-title {
+      font-size: 5rem;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .text-container {
+    .hero-title {
+      margin: 7rem auto;
+      text-align: center;
+      font-size: 4rem;
+    }
+  }
+}
+
+@media (max-width: 365px) {
+  .text-container {
+    .hero-title {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+  }
+}

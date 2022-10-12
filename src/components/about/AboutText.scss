@@ -1,0 +1,74 @@
+@use "../../scss/colors" as *;
+@use "../../scss/typograph" as *;
+@use "../../scss//hoverButton" as *;
+@use "../../scss/structure" as *;
+
+.about-col-text {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .text-content {
+    width: 80%;
+    max-width: 500px;
+
+    .about__title {
+      @include font__fraunces-700;
+      font-size: 5rem;
+      line-height: 5rem;
+      margin-bottom: $mb-3;
+      color: $dark-blue;
+    }
+
+    .about__content {
+      @include font__barlow;
+      font-size: 1.8rem;
+      color: $medium-gray;
+      margin-bottom: $mb-3;
+    }
+
+    .about__link {
+      @include font__fraunces-700;
+      text-transform: uppercase;
+      color: $dark-blue;
+      position: relative;
+    }
+  }
+}
+
+.salmon {
+  .about__link {
+    @include afterHover($salmon);
+  }
+}
+
+.yellow {
+  .about__link {
+    @include afterHover($yellow);
+  }
+}
+
+// MEDIA QUERIES ----
+@media (max-width: 900px) {
+  .about-col-text {
+    .text-content {
+      .about__title {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        margin-bottom: $mb-3;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about-col-text {
+    width: 100%;
+    min-height: 50vh;
+    margin: 4rem auto;
+    text-align: center;
+  }
+}

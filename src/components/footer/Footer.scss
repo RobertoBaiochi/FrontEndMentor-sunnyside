@@ -1,0 +1,121 @@
+@use "../../scss/colors" as *;
+@use "../../scss/typograph" as *;
+@use "../../scss/structure" as *;
+
+#footer {
+  width: 100%;
+  background-color: $footer__cyan;
+
+  .footer-container {
+    max-width: $width-1200;
+    width: 100%;
+    padding: $padding-box;
+    margin: 0 auto;
+  }
+
+  .footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .footer-logo {
+      margin-bottom: $mb-3;
+
+      .logo-link {
+        cursor: pointer;
+
+        img {
+          width: 100%;
+          transition: $trans-default;
+
+          @media (hover: hover) {
+            &:hover {
+              filter: drop-shadow(0 0 6px rgb(100% 100% 100% / 1));
+            }
+          }
+        }
+      }
+    }
+
+    .footer-menu {
+      margin-bottom: $mb-3 * 2;
+      .footer-nav {
+        .nav-list {
+          display: flex;
+          gap: $gap-defalut-4;
+
+          .nav-link {
+            @include font__barlow;
+            color: $text__green-footer;
+            transition: $trans-default;
+            cursor: pointer;
+
+            @media (hover: hover) {
+              &:hover {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .media-menu {
+      .media-list {
+        display: flex;
+        gap: $gap-defalut-4;
+        margin-bottom: $mb-3;
+
+        .media-item {
+          img {
+            width: 25px;
+            transition: $trans-default;
+
+            @media (hover: hover) {
+              &:hover {
+                filter: drop-shadow(0 0 6px rgb(100% 100% 100% / 1));
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .attribution {
+      @include font__barlow;
+      color: $white;
+      font-size: 1.5rem;
+      text-align: center;
+
+      a {
+        color: rgb(5, 151, 5);
+        transition: $trans-default;
+
+        @media (hover: hover) {
+          &:hover {
+            color: rgb(231, 109, 8);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 400px) {
+  #footer {
+    .footer-row {
+      .footer-menu {
+        margin-bottom: $mb-3;
+        .footer-nav {
+          .nav-list {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+          }
+        }
+      }
+    }
+  }
+}

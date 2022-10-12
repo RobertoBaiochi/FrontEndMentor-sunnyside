@@ -1,0 +1,27 @@
+@use "colors" as *;
+@use  "structure" as *;
+
+@mixin afterHover($color) {
+  &::after {
+    content: "";
+    width: 100%;
+    height: 12px;
+    border-radius: 50px;
+    background-color: $color;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    z-index: -1;
+    transition: $trans-default;
+    opacity: 0.3;
+    transform: scaleX(1.05);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

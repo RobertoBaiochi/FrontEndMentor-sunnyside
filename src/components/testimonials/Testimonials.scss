@@ -1,0 +1,49 @@
+@use "../../scss/colors" as *;
+@use "../../scss/typograph" as *;
+@use "../../scss/structure" as *;
+
+#testimonials {
+  width: 100%;
+
+  .testimonials__container {
+    max-width: $width-1200;
+    width: 100%;
+    padding: 10rem 2rem;
+    margin: 0 auto;
+
+    .container-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .title-testimonial {
+        @include font__fraunces-700;
+        font-size: 2rem;
+        color: $light-gray;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 0.45rem;
+        align-items: center;
+        margin-bottom: 7rem;
+      }
+    }
+
+    .testimonials__row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: $gap-defalut-4;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  #testimonials {
+    .testimonials__container {
+      .testimonials__row {
+        flex-direction: column;
+      }
+    }
+  }
+}
